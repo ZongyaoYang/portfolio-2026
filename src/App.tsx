@@ -11,6 +11,8 @@ type Project = {
   title: string;
   context: string;
   description: string;
+  impact: string;
+  principles: string[];
   stack: string[];
 };
 
@@ -36,31 +38,53 @@ const skillGroups = [
 const projects: Project[] = [
   {
     title: 'Research Visitor Management Platform',
-    context: 'NCAR',
+    context: 'Example 1 | NCAR',
     description:
-      'Scalable full-stack platform for managing visiting researchers, affiliations, scheduling, onboarding workflows, and role-based institutional access.',
-    stack: ['React', 'Symfony', 'Django', 'SQL', 'Node.js', 'SimpleSAMLphp', 'Docker', 'AWS'],
+      'Administrative web platform for managing visiting researchers, affiliations, scheduling, onboarding workflows, and role-based institutional access.',
+    impact:
+      'Designed task-focused interfaces for program staff, secured complex user roles with SSO, and kept workflows clear for cross-lab coordination.',
+    principles: ['Responsive workflows', 'Accessible forms', 'Role-based UX', 'USWDS-aligned structure'],
+    stack: ['React', 'Symfony', 'Django', 'SQL', 'Node.js', 'SimpleSAMLphp'],
   },
   {
     title: 'Multi-Site Publications Sync',
-    context: 'NCAR Drupal ecosystem',
+    context: 'Example 2 | NCAR Drupal ecosystem',
     description:
-      'Drupal module and service layer that ingests paginated publication APIs, validates records, persists normalized data, and renders cached cross-site views.',
+      'Reusable publication display system for distributed lab websites, backed by scheduled ingestion, normalized data, and cached view blocks.',
+    impact:
+      'Reduced repeated content work across sites and delivered lightweight publication views that could be reused without redesigning each web property.',
+    principles: ['Lightweight pages', 'Reusable components', 'Content governance', 'Green digital'],
     stack: ['PHP', 'Drupal', 'SQL', 'Cron', 'External APIs', 'Caching'],
   },
   {
     title: 'WRF-Chem Forecast Visualization Pipeline',
-    context: 'NCAR Derecho HPC',
+    context: 'Example 3 | NCAR Derecho HPC',
     description:
-      'HPC pipeline that transforms daily atmospheric chemistry forecast outputs into web-ready visualizations with interactive variable and resolution controls.',
+      'Scientific forecast visualization workflow that transforms daily atmospheric chemistry outputs into web-ready products and interactive controls.',
+    impact:
+      'Made large model outputs easier to explore on the web by separating heavy data processing from lightweight browser selection and display.',
+    principles: ['Data visualization', 'Progressive disclosure', 'Performance-minded UI', 'Green digital'],
     stack: ['Python', 'Xarray', 'NetCDF4', 'NumPy', 'JavaScript', 'HPC'],
   },
   {
     title: 'Customer Web Workflows',
-    context: 'Spectrum.net',
+    context: 'Example 4 | Spectrum.net',
     description:
       'High-traffic authenticated web experiences for eligibility checks, personalized offers, purchases, resilient API data states, and feature-flagged releases.',
+    impact:
+      'Built modular UI components and production states for real customer journeys, including loading, fallback, accessibility, and rollout behavior.',
+    principles: ['WCAG', 'Mobile responsive', 'Design system components', 'Progressive rollout'],
     stack: ['Angular', 'SCSS', 'GraphQL', 'Cucumber', 'WCAG', 'Feature Flags'],
+  },
+  {
+    title: 'Portfolio 2026',
+    context: 'Example 5 | React and TypeScript',
+    description:
+      'This portfolio site, built as a lightweight static React application for GitHub Pages and tailored to web design application review.',
+    impact:
+      'Prioritizes concise content, semantic HTML, responsive layouts, low dependency weight, fast static hosting, and accessible navigation.',
+    principles: ['Mobile-first / responsive', 'Lightweight', 'Semantic HTML', 'Static hosting'],
+    stack: ['React', 'TypeScript', 'Vite', 'CSS', 'GitHub Pages'],
   },
 ];
 
@@ -133,23 +157,27 @@ function App() {
             ZY
           </a>
           <div className="nav-links">
-            <a href="#work">Work</a>
             <a href="#projects">Projects</a>
+            <a href="#principles">Principles</a>
+            <a href="#work">Work</a>
             <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
           </div>
         </nav>
 
         <section className="hero-content" aria-labelledby="hero-title">
-          <p className="eyebrow">Full-stack software engineer</p>
-          <h1 id="hero-title">Zongyao Yang builds production web platforms for complex data and research workflows.</h1>
+          <p className="eyebrow">Web design portfolio | top 5 work examples</p>
+          <h1 id="hero-title">Zongyao Yang designs and builds accessible, lightweight web platforms.</h1>
           <p className="hero-copy">
-            I work across frontend, backend, authentication, APIs, and automated data pipelines, with experience in
-            high-traffic web products, research computing environments, and scientific visualization systems.
+            This portfolio highlights five production examples across research, public-sector-adjacent science,
+            high-traffic customer workflows, responsive interfaces, and data visualization systems.
           </p>
           <div className="hero-actions">
-            <a className="button primary" href="mailto:zongyao.yang@gmail.com">
-              Contact me
+            <a className="button primary" href="#projects">
+              View top 5 examples
+            </a>
+            <a className="button secondary" href="https://zongyaoyang.github.io/portfolio-2026/" target="_blank" rel="noreferrer">
+              Portfolio URL
             </a>
             <a className="button secondary" href="./Zongyao_Yang_Resume.pdf" download>
               Download resume
@@ -164,16 +192,20 @@ function App() {
           <h2>Engineer with a rare mix of web platform depth and scientific computing fluency.</h2>
         </div>
         <p>
-          My background spans React, Angular, PHP, Python, SQL, GraphQL, SSO, Drupal, HPC pipelines, and large-scale
-          atmospheric datasets. I like systems that have to be correct, observable, usable, and resilient in the hands
-          of real people.
+          My work spans React, Angular, Drupal, PHP, Python, SQL, GraphQL, SSO, data pipelines, and large-scale
+          scientific datasets. I focus on interfaces that are understandable, accessible, responsive, maintainable,
+          and efficient enough to serve people without unnecessary weight.
         </p>
       </section>
 
       <section className="section" id="projects">
         <div className="section-heading">
-          <p className="section-label">Selected projects</p>
-          <h2>Built for production, research, and high-volume users.</h2>
+          <p className="section-label">Top 5 work examples</p>
+          <h2>Web design examples selected for this application.</h2>
+          <p className="section-copy">
+            These examples emphasize the requested principles: WCAG, mobile-first and responsive design, lightweight
+            implementation, green digital thinking, and USWDS-aligned clarity for structured forms and services.
+          </p>
         </div>
         <div className="project-grid">
           {projects.map((project) => (
@@ -181,6 +213,12 @@ function App() {
               <p className="card-kicker">{project.context}</p>
               <h3>{project.title}</h3>
               <p>{project.description}</p>
+              <p className="impact">{project.impact}</p>
+              <ul className="principle-list" aria-label={`${project.title} design principles`}>
+                {project.principles.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
               <ul className="tag-list" aria-label={`${project.title} technologies`}>
                 {project.stack.map((item) => (
                   <li key={item}>{item}</li>
@@ -188,6 +226,31 @@ function App() {
               </ul>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="section principles-section" id="principles">
+        <div className="section-heading">
+          <p className="section-label">Design principles</p>
+          <h2>How I approach web design work.</h2>
+        </div>
+        <div className="principles-grid">
+          <article>
+            <h3>WCAG and accessibility</h3>
+            <p>Semantic HTML, keyboard paths, readable states, ARIA only where useful, and screen-reader-aware workflows.</p>
+          </article>
+          <article>
+            <h3>Mobile-first responsiveness</h3>
+            <p>Layouts start from small screens and scale into denser desktop views without clipping, overlap, or hidden content.</p>
+          </article>
+          <article>
+            <h3>Lightweight and green digital</h3>
+            <p>Static delivery, reusable components, cached content, minimal dependencies, and performance-conscious data display.</p>
+          </article>
+          <article>
+            <h3>USWDS-aligned clarity</h3>
+            <p>Clear hierarchy, plain-language task flows, accessible form patterns, and service-oriented navigation for institutional users.</p>
+          </article>
         </div>
       </section>
 
