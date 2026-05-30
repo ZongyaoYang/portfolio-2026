@@ -393,6 +393,50 @@ h2 {
   gap: 16px;
 }
 
+.education-list article {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.education-logo {
+  width: 72px;
+  height: 72px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+
+.education-logo.fiu {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-bottom: 5px solid #b6862c;
+  object-fit: contain;
+  padding: 6px;
+}
+
+.education-logo.uml {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-bottom: 5px solid #c8102e;
+  object-fit: contain;
+  padding: 6px;
+}
+
+.education-logo.nuist {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-bottom: 5px solid #0b77aa;
+  object-fit: contain;
+  padding: 6px;
+}
+
 .education-list p {
   margin-top: 10px;
   color: var(--accent-dark);
@@ -538,5 +582,9 @@ h2 {
 
   .contact {
     padding: 30px 24px;
+  }
+
+  .education-list article {
+    grid-template-columns: 1fr;
   }
 }

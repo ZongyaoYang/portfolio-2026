@@ -135,16 +135,25 @@ const education = [
     degree: 'Ph.D. in Earth Systems Science, Computational Focus',
     school: 'Florida International University',
     details: 'Miami, FL | Aug 2014 - Dec 2020',
+    logo: './fiu-primary-affinity-mark.png',
+    logoClass: 'fiu',
+    logoAlt: 'Florida International University logo',
   },
   {
     degree: 'M.S. in Environmental Studies, Atmospheric Sciences',
     school: 'University of Massachusetts Lowell',
     details: 'Lowell, MA | Aug 2012 - May 2014',
+    logo: './umass-lowell-logo.svg',
+    logoClass: 'uml',
+    logoAlt: 'University of Massachusetts Lowell logo',
   },
   {
     degree: 'B.S. in Computer Sciences',
     school: 'Nanjing University of Information Sciences & Technology',
     details: 'Nanjing, China | Sep 2008 - Jul 2012',
+    logo: './nuist-logo.png',
+    logoClass: 'nuist',
+    logoAlt: 'Nanjing University of Information Science and Technology logo',
   },
 ];
 
@@ -312,9 +321,18 @@ function App() {
         <div className="education-list">
           {education.map((item) => (
             <article key={item.degree}>
-              <h3>{item.degree}</h3>
-              <p>{item.school}</p>
-              <span>{item.details}</span>
+              {item.logoAlt ? (
+                <img className={`education-logo image-logo ${item.logoClass}`} src={item.logo} alt={item.logoAlt} />
+              ) : (
+                <div className={`education-logo ${item.logoClass}`} aria-hidden="true">
+                  {item.logo}
+                </div>
+              )}
+              <div>
+                <h3>{item.degree}</h3>
+                <p>{item.school}</p>
+                <span>{item.details}</span>
+              </div>
             </article>
           ))}
         </div>
