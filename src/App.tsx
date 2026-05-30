@@ -322,16 +322,33 @@ function App() {
           <p className="section-label">Contact</p>
           <h2>Let’s build something useful.</h2>
           <p>
-            I’m based in Denver, CO and authorized to work in the U.S. without visa sponsorship.
+            Send a note through the form or email me directly. I’m based in Denver, CO and authorized to work in the
+            U.S. without visa sponsorship.
           </p>
+          <div className="contact-actions" aria-label="Direct contact links">
+            <a href="mailto:zongyao.yang@gmail.com">zongyao.yang@gmail.com</a>
+            <a href="tel:+17866187880">+1 786-618-7880</a>
+            <a href="https://www.linkedin.com/in/zongyaoyang/" target="_blank" rel="noreferrer">
+              LinkedIn
+            </a>
+          </div>
         </div>
-        <div className="contact-actions" aria-label="Contact links">
-          <a href="mailto:zongyao.yang@gmail.com">zongyao.yang@gmail.com</a>
-          <a href="tel:+17866187880">+1 786-618-7880</a>
-          <a href="https://www.linkedin.com/in/zongyaoyang/" target="_blank" rel="noreferrer">
-            LinkedIn
-          </a>
-        </div>
+        <form className="contact-form" action="https://formspree.io/f/xvzynkyn" method="POST">
+          <input type="hidden" name="_subject" value="Portfolio contact form message" />
+          <label htmlFor="name">
+            Name
+            <input id="name" name="name" type="text" autoComplete="name" required />
+          </label>
+          <label htmlFor="email">
+            Email
+            <input id="email" name="email" type="email" autoComplete="email" required />
+          </label>
+          <label htmlFor="message">
+            Message
+            <textarea id="message" name="message" rows={5} required />
+          </label>
+          <button type="submit">Send message</button>
+        </form>
       </section>
     </main>
   );
