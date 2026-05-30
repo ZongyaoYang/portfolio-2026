@@ -166,18 +166,15 @@ function App() {
         </nav>
 
         <section className="hero-content" aria-labelledby="hero-title">
-          <p className="eyebrow">Web design portfolio | top 5 work examples</p>
+          <p className="eyebrow">Full-Stack Software Engineer with Scientific background</p>
           <h1 id="hero-title">Zongyao Yang designs and builds accessible, lightweight web platforms.</h1>
           <p className="hero-copy">
-            This portfolio highlights five production examples across research, public-sector-adjacent science,
+            This portfolio highlights production work across research, public-sector-adjacent science,
             high-traffic customer workflows, responsive interfaces, and data visualization systems.
           </p>
           <div className="hero-actions">
-            <a className="button primary" href="#projects">
-              View top 5 examples
-            </a>
-            <a className="button secondary" href="https://zongyaoyang.github.io/portfolio-2026/" target="_blank" rel="noreferrer">
-              Portfolio URL
+            <a className="button primary" href="mailto:zongyao.yang@gmail.com">
+              Contact me
             </a>
             <a className="button secondary" href="./Zongyao_Yang_Resume.pdf" download>
               Download resume
