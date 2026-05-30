@@ -173,8 +173,11 @@ function App() {
             high-traffic customer workflows, responsive interfaces, and data visualization systems.
           </p>
           <div className="hero-actions">
-            <a className="button primary" href="mailto:zongyao.yang@gmail.com">
-              Contact me
+            <a className="button primary" href="https://www.linkedin.com/in/zongyaoyang/" target="_blank" rel="noreferrer">
+              <svg className="button-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+                <path d="M6.94 8.98H3.92v9.1h3.02v-9.1ZM5.43 5a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5Zm13.65 7.87c0-2.83-1.51-4.14-3.53-4.14a3.04 3.04 0 0 0-2.75 1.51h-.04V8.98H9.87v9.1h3.01v-4.5c0-1.19.23-2.34 1.7-2.34 1.44 0 1.46 1.35 1.46 2.41v4.43h3.02l.02-5.21Z" />
+              </svg>
+              LinkedIn
             </a>
             <a className="button secondary" href="./Zongyao_Yang_Resume.pdf" download>
               Download resume

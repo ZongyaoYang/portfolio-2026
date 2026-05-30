@@ -155,9 +155,19 @@ h1 {
   border-radius: 8px;
   padding: 14px 20px;
   font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   transition:
     transform 160ms ease,
     background 160ms ease;
+}
+
+.button-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  flex: 0 0 auto;
 }
 
 .button:hover {
